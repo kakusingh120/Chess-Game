@@ -86,6 +86,6 @@ app.get('/', (req, res) => {
     res.render('index', { title: "Chess game" });
 })
 
-server.listen(8080, () => {
-    console.log(`Server is listening on port http://localhost:8080`);
+server.listen(process.env.PORT || 8088 , () => {
+    console.log(`Server is listening on port http://localhost:8088`);
 });
