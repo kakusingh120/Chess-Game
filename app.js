@@ -5,8 +5,17 @@ const { Server } = require('socket.io');
 const http = require('http');
 const path = require('path');
 const server = http.createServer(app);
-const io = new Server(server);  // Correct way to initialize socket.io
+// const io = new Server(server);  // Correct way to initialize socket.io
 
+
+const io = new Server(server, {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"]
+    },
+    transports: ["polling"] // Force long polling instead of WebSockets
+  });
+  
 
 const { Chess } = require('chess.js');
 const chess = new Chess();

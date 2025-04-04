@@ -1,3 +1,5 @@
 node_modules
 Backendsetup.yaml
 Frontendsetup.yaml
+.vercel
+.env
